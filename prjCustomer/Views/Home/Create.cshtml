@@ -60,7 +60,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CreateDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CreateDate, new { htmlAttributes = new { @class = "form-control"} })
+               
+                @Html.TextBoxFor(model => model.CreateDate, new {@Value=DateTime.Now});
                 @Html.ValidationMessageFor(model => model.CreateDate, "", new { @class = "text-danger" })
             </div>
         </div>
