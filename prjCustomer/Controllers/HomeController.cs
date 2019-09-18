@@ -57,7 +57,7 @@ namespace prjCustomer.Controllers
         {
             //var customer = (from s in db.tCustomer where s.fId == fid select s).FirstOrDefault();  //LinQ
             var customer = db.tCustomer.Where(m => m.fId == fid).FirstOrDefault();   //Lamda
-            return  View(customer);
+            return View(customer);
         }
 
         [HttpPost]
@@ -76,25 +76,6 @@ namespace prjCustomer.Controllers
             return RedirectToAction("Index");
 
         }
-
-        public string ShowImage2()
-        {
-            string show = "";
-            for (int i=1; i<=5; i++)
-            {
-                show += string.Format("<img src='../Images/img{0}.jpg' width='150'>", i);
-            }
-            return show;
-        }
-
-        public string ShowImage(int index)
-        {
-            string[] name = new string[] { "Enoch I love you", "Kiss u", "Smile", "Cute", "Good boy" };
-            string show = string.Format("<p align='center'><img src='../Images/img{0}.jpg' width='250'><br>{1}</p>", index, name[index-1]);
-            return show;
-        }
-
-
     }
 }
 
